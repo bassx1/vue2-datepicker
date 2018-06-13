@@ -35,11 +35,7 @@
       :show="showPopup"></calendar-panel>
     <div v-else
       style="overflow:hidden">
-      <div class="mx-datepicker-top"
-        v-if="ranges.length">
-        <span v-for="range in ranges"
-          @click="selectRange(range)">{{range.text}}</span>
-      </div>
+
       <calendar-panel style="width:50%;box-shadow:1px 0 rgba(0, 0, 0, .1)"
         v-model="currentValue[0]"
         :end-at="currentValue[1]"
@@ -51,6 +47,14 @@
         @select="selectDate"
         :show="showPopup"></calendar-panel>
     </div>
+
+    <div class="mx-datepicker-top"
+        v-if="ranges.length">
+        <span v-for="range in ranges"
+        @click="selectRange(range)">{{range.text}}</span>
+    </div>
+
+
     <div class="mx-datepicker-footer"
       v-if="confirm">
 
